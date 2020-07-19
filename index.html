@@ -7,6 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="description" content="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha512-VZ6m0F78+yo3sbu48gElK4irv2dzPoep8oo9LEjxviigcnnnNvnTOJRSrIhuFk68FMLOpiNz+T77nNY89rnWDg==" crossorigin="anonymous"></script>
 
     <title>
       OgaTickets | Post events for free, buy and sell tickets faster online in
@@ -103,11 +104,15 @@
                 type="text"
                 class="form-control"
                 placeholder="I'm looking for..."
+                pattern=""
+
               />
               <i class="icon-search-2 input-icon"></i>
             </div>
             <div class="form-group m-1 position-relative">
-              <input type="text" class="form-control" placeholder="Lagos" />
+              <input type="text" class="form-control" 
+              pattern=""
+              placeholder="Lagos" />
               <i class="icon-location input-icon"></i>
             </div>
             <div class="form-group m-1 position-relative">
@@ -2906,9 +2911,13 @@
           <form class="d-md-flex">
             <input
               type="text"
+              pattern=""
               class="form-control text-white mr-3 bg-transparent border-bottom d-inline-block subinput rounded-0"
               placeholder="Enter your email"
             />
+            <div class="invalid">
+              Please check Your Email and Make sure it is in the right format
+            </div>
             <div
               class="position-relative border-0 mt-md-0 mt-3 btn bg-white submit-btn"
             >
@@ -3085,10 +3094,14 @@
               <div class="form-group">
                 <input
                   type="text"
+                  pattern="[a-zA-Z]{5,}"
                   class="form-control bg-light"
                   placeholder="Username/Email"
                   name="user_email"
                 />
+                <div class="invalid">
+                  please check your username or email
+                </div>
               </div>
               <div class="form-group">
                 <input
@@ -3190,6 +3203,8 @@
               <div class="form-group">
                 <input
                   type="text"
+                  pattern=""
+
                   class="form-control bg-light"
                   placeholder="Enter your email address"
                   name="reset_email"
@@ -3295,10 +3310,11 @@
               >
             </div>
             <p class="or-sep">OR</p>
-            <form autocomplete="off">
+            <form autocomplete="off" id="signup">
               <div class="form-group">
                 <input
                   type="text"
+                  pattern=""
                   class="form-control bg-light"
                   placeholder="Your email address"
                   name="signup_email"
@@ -3307,6 +3323,7 @@
               <div class="form-group">
                 <input
                   type="text"
+                  pattern=""
                   class="form-control bg-light"
                   placeholder="Your password"
                   name="signup_password"
@@ -3315,6 +3332,7 @@
               <div class="form-group">
                 <input
                   type="text"
+                  pattern=""
                   class="form-control bg-light"
                   placeholder="Your Conform password"
                   name="signup_conform_password"
@@ -3386,7 +3404,13 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- <script src="js/jquery-3.2.1.min.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
@@ -3396,9 +3420,9 @@
     <!--jQuery Nice Select -->
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/jquery.scrollbar.min.js"></script>
-
     <script src="js/jquery.fancybox.min.js"></script>
 
     <script src="js/custom.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
