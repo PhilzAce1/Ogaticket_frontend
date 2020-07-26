@@ -12,13 +12,13 @@ $(document).ready(function () {
   //-------------------------------
   // Google Maps Initialization
   //-------------------------------
-  if ($('#loadmaps').length) {
-    var singleMap = false;
-    if ($('#loadmaps').hasClass('single-map')) {
-      singleMap = true;
-    }
-    loadMap(singleMap);
-  }
+  // if ($('#loadmaps').length) {
+  //   var singleMap = false;
+  //   if ($('#loadmaps').hasClass('single-map')) {
+  //     singleMap = true;
+  //   }
+  //   loadMap(singleMap);
+  // }
 
   //-------------------------------
   // Lightbox

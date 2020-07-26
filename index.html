@@ -7,8 +7,11 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="description" content="" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha512-VZ6m0F78+yo3sbu48gElK4irv2dzPoep8oo9LEjxviigcnnnNvnTOJRSrIhuFk68FMLOpiNz+T77nNY89rnWDg==" crossorigin="anonymous"></script>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+      integrity="sha512-VZ6m0F78+yo3sbu48gElK4irv2dzPoep8oo9LEjxviigcnnnNvnTOJRSrIhuFk68FMLOpiNz+T77nNY89rnWDg=="
+      crossorigin="anonymous"
+    ></script>
     <title>
       OgaTickets | Post events for free, buy and sell tickets faster online in
       Nigeria
@@ -31,6 +34,7 @@
     <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
     <!-- jQuery Nice Select -->
     <link rel="stylesheet" href="css/nice-select.css" />
+    <link rel="stylesheet" href="mystyle.css" />
   </head>
 
   <body class="home">
@@ -42,26 +46,27 @@
       <ul
         class="nostyle nav-links inline mr-lg-auto text-right text-lg-left flex-lg-grow-1 mb-0"
       >
-        <li><a class="active" href="index.html">Home</a></li>
+        <li>
+          <a class="active" href="index.html">Home</a>
+        </li>
         <li><a href="about.html">About</a></li>
-        <li><a href="search.html">Find Event</a></li>
-        <li><a href="redeem.html">Retrieve Ticket</a></li>
+        <li><a class="private" href="search.html">Find Event</a></li>
+        <li><a class="private" href="redeem.html">Retrieve Ticket</a></li>
+        <li><a class="private" href="addevent.html">Add Event</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions ml-auto">
-        <!-- <a
-          href="#"
-          data-toggle="modal"
-          class="btn btn-primary border-0"
-          data-target="#loginModal"
-          ><i class="icon-login"></i> Login/Signup</a
-        > -->
+  
         <a
           href="#"
           data-toggle="modal"
           data-target="#loginModal"
+          id="loginBtn"
           class="btn btn-primary border-0"
           ><i class="fas fa-sign-in-alt"></i> Login/Signup</a
+        >
+        <a href="#" class="btn btn-primary border-0" id="logout"
+          ><i class="fas fa-sign-in-alt"></i> Logout</a
         >
       </div>
     </nav>
@@ -71,8 +76,8 @@
       <ul class="text-capitalize">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="search.html">Find Event</a></li>
-        <li><a href="redeem.html">Retrieve Ticket</a></li>
+        <li><a class="private" href="search.html">Find Event</a></li>
+        <li><a class="private" href="redeem.html">Retrieve Ticket</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -104,15 +109,11 @@
                 type="text"
                 class="form-control"
                 placeholder="I'm looking for..."
-                pattern=""
-
               />
               <i class="icon-search-2 input-icon"></i>
             </div>
             <div class="form-group m-1 position-relative">
-              <input type="text" class="form-control" 
-              pattern=""
-              placeholder="Lagos" />
+              <input type="text" class="form-control" placeholder="Lagos" />
               <i class="icon-location input-icon"></i>
             </div>
             <div class="form-group m-1 position-relative">
@@ -132,6 +133,7 @@
                 type="submit"
                 class="h-100 w-100 position-absolute"
                 value="Discover Now"
+                class="private"
               />
             </div>
           </form>
@@ -1212,9 +1214,9 @@
                 </p>
               </div>
             </div>
-            <a href="#" class="btn bg-white mt-5 shadow border-0"
+            <!-- <a href="#" class="btn bg-white mt-5 shadow border-0"
               ><i class="fas fa-angle-double-right btn-icon"></i> Read More</a
-            >
+            > -->
           </div>
           <div class="col-md-5">
             <div class="image-cluster position-relative">
@@ -2911,7 +2913,6 @@
           <form class="d-md-flex">
             <input
               type="text"
-              pattern=""
               class="form-control text-white mr-3 bg-transparent border-bottom d-inline-block subinput rounded-0"
               placeholder="Enter your email"
             />
@@ -3075,7 +3076,7 @@
             </button>
           </div>
           <div class="modal-body p-5">
-            <div class="social-signup text-center pb-25 pt-25">
+            <!-- <div class="social-signup text-center pb-25 pt-25">
               <a class="text-body p-2 text-decoration-none" href="#"
                 ><i class="fab fa-google rounded-pill shadow text-white"></i>
                 Sign in with Google</a
@@ -3089,18 +3090,22 @@
                 Sign in with Twitter</a
               >
             </div>
-            <p class="or-sep">OR</p>
-            <form autocomplete="off">
+            <p class="or-sep">OR</p> -->
+            <form autocomplete="off" id="login">
+              <div class="form-group">
+                <div id="login_up_error">something is worrng</div>
+              </div>
               <div class="form-group">
                 <input
-                  type="text"
-                  pattern="[a-zA-Z]{5,}"
+                  type="email"
                   class="form-control bg-light"
                   placeholder="Username/Email"
-                  name="user_email"
+                  name="email"
+                  required
                 />
                 <div class="invalid">
-                  please check your username or email
+                  The email address may not include any special characters other
+                  than the '.' or '@'.
                 </div>
               </div>
               <div class="form-group">
@@ -3203,8 +3208,6 @@
               <div class="form-group">
                 <input
                   type="text"
-                  pattern=""
-
                   class="form-control bg-light"
                   placeholder="Enter your email address"
                   name="reset_email"
@@ -3295,7 +3298,7 @@
             </button>
           </div>
           <div class="modal-body p-5">
-            <div class="social-signup text-center pb-25">
+            <!-- <div class="social-signup text-center pb-25">
               <a class="text-body p-2 text-decoration-none" href="#"
                 ><i class="fab fa-google rounded-pill shadow text-white"></i>
                 Sign Up with Google</a
@@ -3309,34 +3312,79 @@
                 Sign Up with Twitter</a
               >
             </div>
-            <p class="or-sep">OR</p>
-            <form autocomplete="off" id="signup">
+            <p class="or-sep">OR</p> -->
+            <form autocomplete="on" id="signup">
+              <div class="form-group">
+                <div id="sign_up_error">something is worrng</div>
+              </div>
               <div class="form-group">
                 <input
                   type="text"
-                  pattern=""
+                  class="form-control bg-light"
+                  placeholder="First Name"
+                  name="firstname"
+                  pattern="[a-zA-Z ]{5,}"
+                  maxlength="30"
+                  required
+                />
+                <div class="invalid">
+                  The required user name may only be a series of alphabetical
+                  characters.
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control bg-light"
+                  placeholder="Lastname"
+                  name="lastname"
+                  pattern="[a-zA-Z ]{5,}"
+                  maxlength="30"
+                  required
+                />
+                <div class="invalid">
+                  The required user name may only be a series of alphabetical
+                  characters.
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
                   class="form-control bg-light"
                   placeholder="Your email address"
-                  name="signup_email"
+                  name="email"
+                  required
                 />
+                <div class="invalid">
+                  The email address may not include any special characters other
+                  than the '.' or '@'.
+                </div>
               </div>
               <div class="form-group">
                 <input
-                  type="text"
-                  pattern=""
+                  type="password"
                   class="form-control bg-light"
-                  placeholder="Your password"
+                  placeholder="password"
                   name="signup_password"
+                  pattern="^[A-Za-z]\w{7,14}$"
+                  id="password"
                 />
+                <div class="invalid">
+                  must contain 8 to 20 ,least one numeric digit, one uppercase
+                  and one lowercase letter
+                </div>
               </div>
               <div class="form-group">
                 <input
-                  type="text"
-                  pattern=""
+                  id="confirm_password"
+                  type="password"
                   class="form-control bg-light"
                   placeholder="Your Conform password"
                   name="signup_conform_password"
                 />
+                <div class="invalid" id="validateconpwd">
+                  password and confirm password do not match
+                </div>
               </div>
               <div class="form-group text-center mb-3 mt-4 check-types">
                 <label for="signupcheck">

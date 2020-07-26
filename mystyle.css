@@ -1,0 +1,44 @@
+input:focus {
+  border: 1px solid yellow;
+}
+input:valid {
+  border: 2px solid rgb(51, 204, 84);
+}
+input:valid + .invalid {
+  /* Adjacent sibling selector */
+  visibility: hidden;
+  display: none;
+}
+
+input:invalid + .invalid {
+  visibility: visible;
+}
+
+input:required {
+  border-bottom: 2px solid #c33;
+}
+
+input:valid {
+  border-bottom: transparent;
+}
+
+.invalid {
+  color: #999;
+}
+#sign_up_error {
+  width: 100%;
+  text-align: center;
+  word-break: break-all;
+  display: none;
+  color: red;
+}
+#login_up_error {
+  width: 100%;
+  text-align: center;
+  word-break: break-all;
+  display: none;
+  color: red;
+}
+.none_display {
+  display: none;
+}
