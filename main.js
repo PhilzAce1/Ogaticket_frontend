@@ -166,6 +166,8 @@ function docOnLoad() {
         location.reload();
       });
     } else {
+      console.log(logoutBtn);
+      logoutBtn.style.display = 'none';
       [...links].forEach((x) => {
         x.href = '#';
         x.setAttribute('data-toggle', 'modal');

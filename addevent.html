@@ -2,6 +2,7 @@
 <html lang="zxx">
   <!-- Mirrored from exactthemes.com/eventro/add-event.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jun 2020 05:42:41 GMT -->
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha512-VZ6m0F78+yo3sbu48gElK4irv2dzPoep8oo9LEjxviigcnnnNvnTOJRSrIhuFk68FMLOpiNz+T77nNY89rnWDg==" crossorigin="anonymous"></script>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -107,7 +108,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-9">
-            <form autocomplete="off">
+            <form autocomplete="on" encType="multipart/form-data" id="add_event">
               <div class="row">
                 <div class="form-group getcontent col-sm-12">
                   <label>Event Name</label>
@@ -117,6 +118,7 @@
                     title="Please enter general information about this event. All fields are necessary"
                     placeholder="Event title"
                     name="event_name"
+                    id="name"
                     required
                   />
                 </div>
@@ -126,6 +128,8 @@
                     style="height: 55px;"
                     class="form-control bg-light w-100 pb-0 pt-0 pl-4 wide mb-0"
                     name="e_category"
+                    id="cat"
+
                   >
                     <option value="concert">Concerts</option>
                     <option value="food">Food fest</option>
@@ -140,6 +144,8 @@
                     placeholder="Enter city name"
                     title="Please enter city"
                     name="e_city"
+                    id="city"
+
                   />
                 </div>
                 <div class="form-group getcontent col-sm-12">
@@ -150,6 +156,8 @@
                     placeholder="Add description about this event"
                     title="Please enter full description about this event"
                     name="e_description"
+                    id="desc"
+
                   ></textarea>
                 </div>
                 <div class="form-group getcontent col-sm-12">
@@ -160,151 +168,24 @@
                     placeholder="Add contact number"
                     title="Please enter your contact number"
                     name="e_phone"
+                    id="number"
+
                   />
                 </div>
                 <div class="form-group getcontent col-sm-12">
                   <label>Email address*</label>
                   <input
-                    type="text"
+                    type="email"
                     class="form-control bg-light"
                     placeholder="Your email address"
                     title="Please enter your email address for the customers to reach you"
                     name="e_email"
+                    id="email"
                   />
                 </div>
 
                 <div class="cleardiv"></div>
-                <div
-                  class="form-group amenities m-0 getcontent col-sm-12"
-                  data-title="Event Information"
-                  data-content="Please enter general information
-							about this event. All fields are necessary"
-                >
-                  <label>Amenities</label>
-                  <ul class="p-0 m-0 nostyle">
-                    <li class="mb-4 mt-2">
-                      <i class="fas fa-wheelchair text-primary"></i>&nbsp;&nbsp;
-                      Wheel-chair Access
-                      <div class="float-right">
-                        <div class="text-center check-types">
-                          <label for="cbk1">
-                            <input type="checkbox" id="cbk1" />
-                            <span
-                              class="cbx rounded-pill float-none d-inline-block align-middle"
-                            >
-                              <svg
-                                width="12px"
-                                height="11px"
-                                viewBox="0 0 12 11"
-                              >
-                                <polyline
-                                  points="1 6.29411765 4.5 10 11 1"
-                                ></polyline>
-                              </svg>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="mb-4 mt-2">
-                      <i class="fas fa-smoking-ban text-primary"></i
-                      >&nbsp;&nbsp; Smoking Allowed
-                      <div class="float-right">
-                        <div class="text-center check-types">
-                          <label for="cbk2">
-                            <input type="checkbox" id="cbk2" />
-                            <span
-                              class="cbx rounded-pill float-none d-inline-block align-middle"
-                            >
-                              <svg
-                                width="12px"
-                                height="11px"
-                                viewBox="0 0 12 11"
-                              >
-                                <polyline
-                                  points="1 6.29411765 4.5 10 11 1"
-                                ></polyline>
-                              </svg>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="mb-4 mt-2">
-                      <i class="fas fa-bookmark text-primary"></i>&nbsp;&nbsp;
-                      Advance booking
-                      <div class="float-right">
-                        <div class="text-center check-types">
-                          <label for="cbk3">
-                            <input type="checkbox" id="cbk3" />
-                            <span
-                              class="cbx rounded-pill float-none d-inline-block align-middle"
-                            >
-                              <svg
-                                width="12px"
-                                height="11px"
-                                viewBox="0 0 12 11"
-                              >
-                                <polyline
-                                  points="1 6.29411765 4.5 10 11 1"
-                                ></polyline>
-                              </svg>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="mb-4 mt-2">
-                      <i class="fas fa-person-booth text-primary"></i
-                      >&nbsp;&nbsp; Waiting room
-                      <div class="float-right">
-                        <div class="text-center check-types">
-                          <label for="cbk4">
-                            <input type="checkbox" id="cbk4" />
-                            <span
-                              class="cbx rounded-pill float-none d-inline-block align-middle"
-                            >
-                              <svg
-                                width="12px"
-                                height="11px"
-                                viewBox="0 0 12 11"
-                              >
-                                <polyline
-                                  points="1 6.29411765 4.5 10 11 1"
-                                ></polyline>
-                              </svg>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="mb-4 mt-2">
-                      <i class="fas fa-wind text-primary"></i>&nbsp;&nbsp;
-                      Airconditioner
-                      <div class="float-right">
-                        <div class="text-center check-types">
-                          <label for="cbk5">
-                            <input type="checkbox" id="cbk5" />
-                            <span
-                              class="cbx rounded-pill float-none d-inline-block align-middle"
-                            >
-                              <svg
-                                width="12px"
-                                height="11px"
-                                viewBox="0 0 12 11"
-                              >
-                                <polyline
-                                  points="1 6.29411765 4.5 10 11 1"
-                                ></polyline>
-                              </svg>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="cleardiv"></div>
+              
                 <div class="form-group getcontent col-sm-12">
                   <label>Featured image</label>
                   <div
@@ -315,6 +196,7 @@
                       name="file_upload"
                       class="position-absolute pointer"
                       multiple
+                      id="image"
                     />
                     <i class="fas fa-cloud-upload-alt h3 m-0"></i>&nbsp; Choose
                     images
@@ -322,11 +204,8 @@
                 </div>
                 <div class="cleardiv"></div>
 
-                <div class="cleardiv"></div>
-               
-          
                   <label>Ticket Types</label>
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-md-4">
                       <div class="ticket-table p-3 m-2 rounded">
                         <input
@@ -620,8 +499,8 @@
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </div> -->
+                  </div> -->
+                </div> 
                 <div class="form-group col-sm-12">
                   <label>Available Seats*</label>
                   <input
@@ -679,7 +558,7 @@
     </section>
 
     <!-- Subscribe -->
-    <section id="et-subscribe-form">
+    <!-- <section id="et-subscribe-form">
       <div
         class="box-wrap img-overlay no-hover position-relative rounded shadow p-5 text-white"
       >
@@ -707,7 +586,7 @@
           </form>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <footer
       id="et-site-footer"
@@ -1184,6 +1063,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmrxCFuWyNUlMh6wLitVLI3pF7j_HqAFY&amp;libraries=places&amp;ver=1.1"></script>
     <script src="js/custom.js"></script>
     <script src="main.js"></script>
+    <script src="js/addevent.js"></script>
   </body>
 
   <!-- Mirrored from exactthemes.com/eventro/add-event.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jun 2020 05:42:56 GMT -->
