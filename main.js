@@ -159,7 +159,10 @@ function docOnLoad() {
   const token = window.localStorage.getItem('token');
   if (links && loginBtn && logoutBtn) {
     if (username && token) {
-      window.location.pathname = '/dashboard.html';
+      console.log('we are changing ');
+      if (window.location.pathname !== '/dashboard.html') {
+        window.location.pathname = '/dashboard.html';
+      }
       loginBtn.style.display = 'none';
       logoutBtn.classList.remove('none_display');
       logoutBtn.addEventListener('click', () => {

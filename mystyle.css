@@ -57,5 +57,16 @@ input:valid {
   font-weight: bold;
   color: inherit;
   font-size: 1.3em;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   text-decoration: none;
+}
+#loadmaps ul li a i {
+  font-size: 3em;
+}
+@media (max-width: 450px) {
+  .display_mobile {
+    display: none;
+  }
 }
