@@ -160,7 +160,7 @@ function docOnLoad() {
   if (links && loginBtn && logoutBtn) {
     if (username && token) {
       console.log('we are changing ');
-      if (window.location.pathname !== '/dashboard.html') {
+      if (window.location.pathname === '/index.html') {
         window.location.pathname = '/dashboard.html';
       }
       loginBtn.style.display = 'none';

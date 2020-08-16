@@ -14,14 +14,14 @@ function submit(e) {
   const image = document.querySelector('#image');
 
   const data = {
-    event_code: 'fs2012',
-    event_name: 'fusion',
+    event_code: Data.now(),
+    event_name: name,
     event_date: '2020-12-12',
     event_time: '8:00',
-    event_description: 'show',
-    event_location: 'lagos',
-    event_category: 'cat',
-    image: 'c:/user/user/destop/someeii',
+    event_description: desc,
+    event_location: city,
+    event_category: category,
+    image: '',
   };
   const reader = new FileReader();
   reader.readAsDataURL(image.files[0]);

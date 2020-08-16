@@ -83,7 +83,7 @@
           <a href="#"> View Events</a>
         </li>
         <li>
-          <a href="addticket.html"> Add Tickets</a>
+          <a href="#"> Add Tickets</a>
         </li>
         <li>
           <a href="#"> View Tickets</a>
@@ -110,9 +110,7 @@
           <a href="#"><i class="fas fa-binoculars"></i>View Events</a>
         </li>
         <li>
-          <a href="addticket.html"
-            ><i class="fas fa-ticket-alt"></i>Add Tickets</a
-          >
+          <a href="#"><i class="fas fa-ticket-alt"></i>Add Tickets</a>
         </li>
         <li>
           <a href="#"> <i class="fas fa-clipboard-list"></i>View Tickets</a>
@@ -140,9 +138,7 @@
                   <a href="#"><i class="fas fa-binoculars"></i>View Events</a>
                 </li>
                 <li>
-                  <a href="addticket.html"
-                    ><i class="fas fa-ticket-alt"></i>Add Tickets</a
-                  >
+                  <a href="#"><i class="fas fa-ticket-alt"></i>Add Tickets</a>
                 </li>
                 <li>
                   <a href="#">
@@ -159,145 +155,459 @@
           <div class="event-results pl-4 pr-md-4">
             <!-- Grid View -->
             <div class="row grid-view scrollbar-inner">
-              <div class="col-md-4 mt-3 mb-3">
-                <div class="blog-grid w-100 mt-4 rounded shadow">
-                  <div class="image-wrap position-relative">
-                    <span
-                      class="badge badge-primary listings photocount position-absolute"
-                      >110 Listings</span
-                    >
-                    <img
-                      src="img/event-grid-1.jpg"
-                      alt="img"
-                      class="img-fluid rounded-top"
-                    />
-                  </div>
-                  <div class="content p-4">
-                    <h4 class="mb-3">
-                      <a href="#" class="text-decoration-none text-reset"
-                        >Most Recent 5 events</a
+              <section id="et-add-event" class="container-fluid">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-9">
+                      <form autocomplete="on" enctype="multipart/form-data" 
+                       id="add_ticket">
+                        <div class="row">
+                          <div class="form-group getcontent col-sm-12">
+                            <label>Add Ticket</label>
+                            <input
+                              type="text"
+                              class="form-control bg-light"
+                              title="Please enter general information about this event. All fields are necessary"
+                              placeholder="Event title"
+                              name="event_name"
+                              id="name"
+                              required
+                            />
+                          </div>
+                          <div class="form-group getcontent col-sm-12">
+                            <label>Category*</label>
+                            <select
+                              style="height: 55px;"
+                              class="form-control bg-light w-100 pb-0 pt-0 pl-4 wide mb-0"
+                              name="e_category"
+                              id="cat"
+          
+                            >
+                              <option value="concert">Concerts</option>
+                              <option value="food">Food fest</option>
+                              <option value="autoshow">Autoshow</option>
+                            </select>
+                          </div>
+                          <div class="form-group getcontent col-sm-12">
+                            <label>City*</label>
+                            <input
+                              type="text"
+                              class="form-control bg-light"
+                              placeholder="Enter city name"
+                              title="Please enter city"
+                              name="e_city"
+                              id="city"
+          
+                            />
+                          </div>
+                          <div class="form-group getcontent col-sm-12">
+                            <label>Description*</label>
+                            <textarea
+                              rows="6"
+                              class="form-control resize-none bg-light"
+                              placeholder="Add description about this event"
+                              title="Please enter full description about this event"
+                              name="e_description"
+                              id="desc"
+          
+                            ></textarea>
+                          </div>
+                          <div class="form-group getcontent col-sm-12">
+                            <label>Phone*</label>
+                            <input
+                              type="text"
+                              class="form-control bg-light"
+                              placeholder="Add contact number"
+                              title="Please enter your contact number"
+                              name="e_phone"
+                              id="number"
+          
+                            />
+                          </div>
+                          <div class="form-group getcontent col-sm-12">
+                            <label>Email address*</label>
+                            <input
+                              type="email"
+                              class="form-control bg-light"
+                              placeholder="Your email address"
+                              title="Please enter your email address for the customers to reach you"
+                              name="e_email"
+                              id="email"
+                            />
+                          </div>
+          
+                          <div class="cleardiv"></div>
+                        
+                          <div class="form-group getcontent col-sm-12">
+                            <label>Featured image</label>
+                            <div
+                              class="fake-file-upload rounded-pill transition-1 d-flex align-items-center justify-content-center p-3 text-center text-muted position-relative"
+                            >
+                              <input
+                                type="file"
+                                name="file_upload"
+                                class="position-absolute pointer"
+                                multiple
+                                id="image"
+                              />
+                              <i class="fas fa-cloud-upload-alt h3 m-0"></i>&nbsp; Choose
+                              images
+                            </div>
+                          </div>
+                          <div class="cleardiv"></div>
+          
+                            <label>Ticket Types</label>
+                              <div class="col-md-4">
+                                <div class="ticket-table p-3 m-2 rounded">
+                                  <input
+                                    type="text"
+                                    name="ticket_title"
+                                    placeholder="Enter title e.g. Silver"
+                                    class="border-bottom ticket-title rounded-0 form-control w-100 mb-2"
+                                  />
+                                  <ul class="nostyle p-0">
+                                    <li>
+                                      <span>Price:</span>
+                                      <select class="ml-auto default" name="price">
+                                        <option value="10">$10</option>
+                                        <option value="20">$20</option>
+                                        <option value="30">$30</option>
+                                      </select>
+                                    </li>
+                                    <li>
+                                      <span>Row:</span>
+                                      <select class="ml-auto default" name="row">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                      </select>
+                                    </li>
+                                    <li>
+                                      <span>Refreshment:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="ref1">
+                                          <input type="checkbox" id="ref1" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <span>VIP Seats:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="seats1">
+                                          <input type="checkbox" id="seats1" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <span>Pick & Drop:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="pickdrop1">
+                                          <input type="checkbox" id="pickdrop1" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+          
+                              <div class="col-md-4">
+                                <div class="ticket-table p-3 m-2 rounded">
+                                  <input
+                                    type="text"
+                                    name="ticket_title"
+                                    placeholder="Enter title e.g. Silver"
+                                    class="border-bottom ticket-title rounded-0 form-control w-100 mb-2"
+                                  />
+                                  <ul class="nostyle p-0">
+                                    <li>
+                                      <span>Price:</span>
+                                      <select class="ml-auto default" name="price">
+                                        <option value="10">$10</option>
+                                        <option value="20">$20</option>
+                                        <option value="30">$30</option>
+                                      </select>
+                                    </li>
+                                    <li>
+                                      <span>Row:</span>
+                                      <select class="ml-auto default" name="row">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                      </select>
+                                    </li>
+                                    <li>
+                                      <span>Refreshment:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="ref2">
+                                          <input type="checkbox" id="ref2" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <span>VIP Seats:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="seats2">
+                                          <input type="checkbox" id="seats2" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <span>Pick & Drop:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="pickdrop2">
+                                          <input type="checkbox" id="pickdrop2" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+          
+                              <div class="col-md-4">
+                                <div class="ticket-table p-3 rounded">
+                                  <input
+                                    type="text"
+                                    name="ticket_title"
+                                    placeholder="Enter title e.g. Silver"
+                                    class="border-bottom ticket-title rounded-0 form-control w-100 mb-2"
+                                  />
+                                  <ul class="nostyle p-0">
+                                    <li>
+                                      <span>Price:</span>
+                                      <select class="ml-auto default" name="price">
+                                        <option value="10">$10</option>
+                                        <option value="20">$20</option>
+                                        <option value="30">$30</option>
+                                      </select>
+                                    </li>
+                                    <li>
+                                      <span>Row:</span>
+                                      <select class="ml-auto default" name="row">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                      </select>
+                                    </li>
+                                    <li>
+                                      <span>Refreshment:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="ref3">
+                                          <input type="checkbox" id="ref3" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <span>VIP Seats:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="seats3">
+                                          <input type="checkbox" id="seats3" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <span>Pick & Drop:</span>
+                                      <div
+                                        class="form-group ml-auto m-0 text-center check-types"
+                                      >
+                                        <label for="pickdrop3">
+                                          <input type="checkbox" id="pickdrop3" />
+                                          <span
+                                            class="cbx rounded-pill float-none d-inline-block align-middle"
+                                          >
+                                            <svg
+                                              width="12px"
+                                              height="11px"
+                                              viewBox="0 0 12 11"
+                                            >
+                                              <polyline
+                                                points="1 6.29411765 4.5 10 11 1"
+                                              ></polyline>
+                                            </svg>
+                                          </span>
+                                        </label>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div> -->
+                          </div> 
+                          <div class="form-group col-sm-12">
+                            <label>Available Seats*</label>
+                            <input
+                              type="number"
+                              class="form-control bg-light"
+                              placeholder="Enter number of seats available"
+                              name="e_seats"
+                            />
+                          </div>
+                        
+                          <div class="form-group col-sm-12 check-types">
+                            <label for="agreement">
+                              <input type="checkbox" id="agreement" />
+                              <span
+                                class="cbx rounded-pill float-none d-inline-block align-middle"
+                              >
+                                <svg width="12px" height="11px" viewBox="0 0 12 11">
+                                  <polyline points="1 6.29411765 4.5 10 11 1"></polyline>
+                                </svg>
+                              </span>
+                              <span class="float-none text-black-50"
+                                >I agree to the
+                                <a href="#" class="text-primary">terms and conditions</a>
+                                and
+                                <a href="#" class="text-primary">usage policy</a> before i
+                                submit my business</span
+                              >
+                            </label>
+                          </div>
+                          <div class="col-sm-12">
+                            <div
+                              class="position-relative border-0 mt-md-0 mt-3 btn btn-primary submit-btn"
+                            >
+                              <i class="icon-tick btn-icon input-icon"></i> Submit Event
+                              <input
+                                type="submit"
+                                class="h-100 w-100 position-absolute"
+                                value="Submit Review"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="col-lg-3">
+                      <div
+                        class="info-box shadow p-4 position-relative text-center rounded"
                       >
-                    </h4>
-                    <p class="description">
-                      Top 5 fieeoddf
-                    </p>
-                    <div
-                      class="time-left mt-4 d-inline-block pt-2 pt-md-0"
-                    ></div>
-                    <div
-                      class="position-relative float-right border-0 mt-3 btn btn-primary btn-small submit-btn"
-                    >
-                      <i class="icon-calendar btn-icon input-icon"></i> View ALl
-                      Events
+                        <h4>Sample Title</h4>
+                        <p class="description m-0">Sample description goes here...</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="col-md-4 mt-3 mb-3">
-                <div class="blog-grid w-100 mt-4 rounded shadow">
-                  <div class="image-wrap position-relative">
-                    <span
-                      class="badge badge-primary listings photocount position-absolute"
-                      >110 Listings</span
-                    >
-                    <img
-                      src="img/event-grid-1.jpg"
-                      alt="img"
-                      class="img-fluid rounded-top"
-                    />
-                  </div>
-                  <div class="content p-4">
-                    <h4 class="mb-3">
-                      <a href="#" class="text-decoration-none text-reset"
-                        >Most Recent 5 Tickets Sold</a
-                      >
-                    </h4>
-                    <p class="description">
-                      Top 5 fieeoddf
-                    </p>
-                    <div
-                      class="time-left mt-4 d-inline-block pt-2 pt-md-0"
-                    ></div>
-                    <div
-                      class="position-relative float-right border-0 mt-3 btn btn-primary btn-small submit-btn"
-                    >
-                      <i class="icon-calendar btn-icon input-icon"></i> View ALl
-                      Events
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 mt-3 mb-3">
-                <div class="blog-grid w-100 mt-4 rounded shadow">
-                  <div class="image-wrap position-relative">
-                    <span
-                      class="badge badge-primary listings photocount position-absolute"
-                      >110 Listings</span
-                    >
-                    <img
-                      src="img/event-grid-1.jpg"
-                      alt="img"
-                      class="img-fluid rounded-top"
-                    />
-                  </div>
-                  <div class="content p-4">
-                    <h4 class="mb-3">
-                      <a href="#" class="text-decoration-none text-reset"
-                        >Most Recent 5 Teckets Bought</a
-                      >
-                    </h4>
-                    <p class="description">
-                      Top 5 fieeoddf
-                    </p>
-                    <div
-                      class="time-left mt-4 d-inline-block pt-2 pt-md-0"
-                    ></div>
-                    <div
-                      class="position-relative float-right border-0 mt-3 btn btn-primary btn-small submit-btn"
-                    >
-                      <i class="icon-calendar btn-icon input-icon"></i> View ALl
-                      Events
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 mt-3 mb-3">
-                <div class="blog-grid w-100 mt-4 rounded shadow">
-                  <div class="image-wrap position-relative">
-                    <span
-                      class="badge badge-primary listings photocount position-absolute"
-                      >110 Listings</span
-                    >
-                    <img
-                      src="img/event-grid-1.jpg"
-                      alt="img"
-                      class="img-fluid rounded-top"
-                    />
-                  </div>
-                  <div class="content p-4">
-                    <h4 class="mb-3">
-                      <a href="#" class="text-decoration-none text-reset"
-                        >Most Recent 5 events</a
-                      >
-                    </h4>
-                    <p class="description">
-                      Top 5 fieeoddf
-                    </p>
-                    <div
-                      class="time-left mt-4 d-inline-block pt-2 pt-md-0"
-                    ></div>
-                    <div
-                      class="position-relative float-right border-0 mt-3 btn btn-primary btn-small submit-btn"
-                    >
-                      <i class="icon-calendar btn-icon input-icon"></i> View ALl
-                      Events
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </section>
+          
             </div>
 
             <!-- List view -->
@@ -564,37 +874,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Subscribe -->
-    <section id="et-subscribe-form">
-      <div
-        class="box-wrap img-overlay no-hover position-relative rounded shadow p-5 text-white"
-      >
-        <div class="container position-relative">
-          <h4 class="text-white">
-            Get The Best Of All Hands Delivered To Your Inbox
-          </h4>
-          <p>Subscribe to our newsletter and stay updated.</p>
-          <form class="d-md-flex">
-            <input
-              type="text"
-              class="form-control text-white mr-3 bg-transparent border-bottom d-inline-block subinput rounded-0"
-              placeholder="Enter your email"
-            />
-            <div
-              class="position-relative border-0 mt-md-0 mt-3 btn bg-white submit-btn"
-            >
-              <i class="icon-login btn-icon input-icon"></i> Subscribe
-              <input
-                type="submit"
-                class="h-100 w-100 position-absolute"
-                value="Discover Now"
-              />
-            </div>
-          </form>
         </div>
       </div>
     </section>

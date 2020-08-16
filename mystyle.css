@@ -62,6 +62,12 @@ input:valid {
   align-items: center;
   text-decoration: none;
 }
+#loadmaps ul li a:hover {
+  color: rgb(66, 66, 148);
+}
+#loadmaps ul li a:active {
+  color: rgb(148, 66, 70);
+}
 #loadmaps ul li a i {
   font-size: 3em;
 }
